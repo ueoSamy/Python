@@ -64,7 +64,7 @@ def rm(filename):
         except PermissionError:
             print('В доступе было отказано!')
             os.rmdir(filename)
-            print('Но мы удалили все равно! :)')
+            print('Но мы все равно удалили! :)')
 
 
 def ls():
@@ -74,6 +74,7 @@ def ls():
 def cd(path):
     try:
         os.chdir(path)
+        print('Успешно перешли в указанную папку')
     except FileNotFoundError:
         print('Невозможно перейти в директорию, ее не существует!')
 
