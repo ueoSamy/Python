@@ -61,6 +61,10 @@ def rm(filename):
             os.remove(filename)
         except FileNotFoundError:
             print('Файл для удаления не найден.')
+        except PermissionError:
+            print('В доступе было отказано!')
+            os.rmdir(filename)
+            print('Но мы удалили все равно! :)')
 
 
 def ls():
